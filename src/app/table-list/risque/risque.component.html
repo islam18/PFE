@@ -1,0 +1,94 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+       
+                
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Fiche Risque</h4>
+                        <p class="card-category">Code Client : {{modelePersonnePhysique.code}}</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>COTATION : {{modelePersonnePhysique.valeur}}</h2>
+                        </div>
+                        <form>
+
+                           
+                           <div *ngIf="modelePersonnePhysique">
+                          
+                            <div>
+                                <label class="l1" ><b> <section class="mat-typography">
+                                    <h2>LES RISQUES LIES AU CRITERE GEOGRAPHIQUE</h2>
+                                  </section> </b></label> 
+                               
+                                
+                                
+                                <p></p>
+                                <label class="l2"><b>Liste Noire : </b></label> {{modelePersonnePhysique.listeNoire}}
+                                <p></p> 
+                                <label class="l2"><b>Liste Grise :</b></label> {{modelePersonnePhysique.listeGrise}} 
+                                <p></p> 
+                                <label class="l2"><b>Liste Economie Parallele :</b></label> {{modelePersonnePhysique.listeEconomieParallele}} 
+                                <p></p>
+                                <label class="l2"><b>Liste Pays producteurs du drogue :</b></label> {{modelePersonnePhysique.listeDrogue}}
+                                <p></p>
+                                <label class="l2"><b>Liste Pays en guerre :</b></label> {{modelePersonnePhysique.listeGeurre}}
+                                <p></p>
+                                <label class="l2"><b>Liste Pays en corruption:</b></label> {{modelePersonnePhysique.listeCorruption}}
+                             </div>
+
+                        
+                        
+
+                          <div>
+                            <label class="l1" ><b> <section class="mat-typography">
+                                <h2>LES RISQUES LIES AU SECTEUR ET AU PROFESSION DE LA PERSONNE PHYSIQUE </h2>
+                              </section> </b></label> 
+                             
+                             <div *ngIf="modelePersonnePhysique.secteur; else elseBlock">  
+                                <p class="l2"> {{modelePersonnePhysique.secteur}}</p>
+                                <p class="l2"> {{modelePersonnePhysique.profession}}</p>
+                              </div>
+                             
+                              <ng-template #elseBlock> <p>Aucun risque lié au secteur</p></ng-template>
+                            
+                         </div>
+
+
+                         <div>
+                            <label class="l1" ><b> <section class="mat-typography">
+                                <h2>LES RISQUES LIES A LA NATURE DE LA PERSONNE PHYSIQUE </h2>
+                              </section> </b></label> 
+                             
+                             <div *ngIf="modelePersonnePhysique.intermediaire; else elseBlock">  
+                                <p class="l2"> {{modelePersonnePhysique.intermediaire}}</p>
+                                <p class="l2"> {{modelePersonnePhysique.nature}}</p>
+                              </div>
+                             
+                              <ng-template #elseBlock> <p>Aucun risque lié au secteur</p></ng-template>
+                            
+                         </div>
+
+
+  
+   
+                             </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+   

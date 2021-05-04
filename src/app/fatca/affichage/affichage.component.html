@@ -1,0 +1,117 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Vos clients </h4>
+                        <p class="card-category"> Clients ayant un statut fatca </p>
+                    </div>
+                    <div class="card-body">
+                        <label class="l1">Clients morales</label>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nature
+                                    </th>
+                                    <th>
+                                        Forme Juridique
+                                    </th>
+                                    <th>
+                                       Statut Fatca
+                                    </th>
+                                    <th>
+                                       Niveau risque
+                                    </th>
+                                    <th>
+                                        Revue
+                                    </th>
+
+                                    
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let personne_morale of personne_morale">
+                                      
+                                      <td>{{personne_morale.codeClient}}</td>
+                                      <td>{{personne_morale.nature}}</td>
+                                      <td>{{personne_morale.formeJuridique}}</td>
+                                      <td>{{personne_morale.statutFatca}}</td>
+                                      <td>{{personne_morale.niveauRisque}}</td>
+                                      <td>{{personne_morale.revue}}</td>
+                                      
+                                      
+                                      
+  
+                                      <td class="text-center"><button class="btn btn-primary btn-xs" (click)="details(personne_morale.codeClient)" ><span class="material-icons">article</span></button></td>
+                                      
+                                      <td class="text-center"><button mat-stroked-button color="warn" (click)="risque(personne_morale.codeClient)" ><span class="material-icons">warning_amber</span></button>
+
+                                
+                                          
+                                    </td>
+                                    </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <label class="l1">Clients physiques</label>
+                        <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Nom 
+                                </th>
+                                <th>
+                                    Prenom
+                                </th>
+                                <th>
+                                    Statut Fatca
+                                </th>
+                                <th>
+                                    Niveau risque
+                                </th>
+                                <th>
+                                    Revue
+                                </th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let personne_physique of personne_physique">
+                                  
+                                  <td>{{personne_physique.codeClient}}</td>
+                                  <td>{{personne_physique.nom}} </td>
+                                  <td>{{personne_physique.prenom}}</td>
+                                  
+                                  <td>{{personne_physique.statutFatca}}</td>
+                                  <td>{{personne_physique.niveauRisque}}</td>
+                                  <td>{{personne_physique.revue}}</td>
+                                  
+
+                                  <td class="text-center"><button class="btn btn-primary btn-xs" (click)="detailsPP(personne_physique.codeClient)" ><span class="material-icons">article</span> </button></td>
+                                  <td class="text-center"><button mat-stroked-button color="warn" (click)="risquePP(personne_physique.codeClient)" ><span class="material-icons">warning_amber</span></button>
+
+                                </tr>
+                          </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </div>
+    
+  </div>
+

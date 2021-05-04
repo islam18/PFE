@@ -1,0 +1,143 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+              
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Vos clients  </h4>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                        <!--<tr>
+                      <th><button mat-stroked-button style="margin-left: 350px" (click)="AjoutclientsPhysique()" >Ajouter client physique</button></th>
+                      <th><button mat-stroked-button  (click)="AjoutclientMorale()" >Ajouter client morale</button></th> 
+                                
+                      <th><button mat-stroked-button (click)="clientsPhysiques()" >clients physiques</button></th>
+                      <th><button mat-stroked-button  (click)="clientsMorales()" >clients morales</button></th> 
+                      
+                  </tr>-->
+                     <tr> <p></p> </tr> 
+                     <label class="l1">Clients moraux</label>
+                        <div class="table-responsive">
+                          <p></p>
+                          <p></p>
+                            <table class="table" id="mytable">
+                              <p></p>
+                              <p></p>
+                                <thead class=" text-primary">
+                                    
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nature
+                                    </th>
+                                    <th>
+                                        Forme Juridique
+                                    </th>
+                                    <th>
+                                        Pays
+                                     </th>
+                                    <th>
+                                       Contact
+                                    </th>
+                                    
+                                    <th>
+                                        Statut 
+                                    </th>
+                                    
+
+                                    
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let personneMorale of personneMorale">
+                                      
+                                      <td>{{personneMorale.codeClient}}</td>
+                                      <td>{{personneMorale.nature}}</td>
+                                      <td>{{personneMorale.formeJuridique}}</td>
+                                      <td>{{personneMorale.paysResidence}}</td>
+                                      <td>{{personneMorale.numTelephone}}</td>
+                                      <td>{{personneMorale.statutPersonne}}</td>
+                                      
+                                      
+                                      
+                                      
+                                      
+  
+                                      
+                                      <td class="text-center"><button class="btn btn-primary btn-xs" (click)="traiter(personneMorale.codeClient)" ><span class="material-icons">article</span> Traiter</button></td>
+                                      
+
+  
+                                    </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <label class="l1">Clients Physiques</label>
+                        <div class="table-responsive">
+                          <p></p>
+                          <p></p>
+                            <table class="table" >
+                              <p></p>
+                              <p></p>
+                                <thead class=" text-primary">
+                                    
+                                    <th>
+                                        Identifiant
+                                    </th>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Prenom
+                                    </th>
+                                    <th>Contact
+                                    </th>
+                                    <th>
+                                        Pays 
+                                    </th>
+                                    
+                                    <th>
+                                        Statut
+                                    </th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let personnePhysique of personnePhysique">
+                                      
+                                    
+                                  
+                                        <td>{{personnePhysique.codeClient}}</td>
+                                        <td>{{personnePhysique.nom}} </td>
+                                        <td>{{personnePhysique.prenom}}</td>
+                                        <td>{{personnePhysique.numTelephone}}</td>
+                                        <td>{{personnePhysique.paysResidence}}</td>
+                                        <td>{{personnePhysique.statutPersonne}}</td>
+                                      
+                                      
+                                      
+  
+                                      
+                                      <td class="text-center"><button class="btn btn-primary btn-xs" (click)="traiter(personnePhysique.codeClient)" ><span class="material-icons">article</span> Traiter</button></td>
+                                      
+
+  
+                                    </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        
+                  
+  
+                  
+                  
+                 
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </div>
+    
+  </div>
+  
