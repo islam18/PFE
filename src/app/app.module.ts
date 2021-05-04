@@ -27,7 +27,6 @@ import { NationaliteComponent } from './user-profile/nationalite/nationalite.com
 import { PepComponent } from './user-profile/pep/pep.component';
 import { MatTableModule } from '@angular/material/table';
 import { BeneficiairesEffectifsComponent } from './typography/beneficiaires-effectifs/beneficiaires-effectifs.component';
-
 import { PepPMComponent } from './typography/pep-pm/pep-pm.component';
 import { ParenteComponent } from './user-profile/parente/parente.component';
 import { TestComponent } from './test/test.component';

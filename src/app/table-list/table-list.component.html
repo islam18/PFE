@@ -1,8 +1,8 @@
 
 
 
-<div class="main-content">
-  <div class="container-fluid">
+<div class="main-content" >
+  <div class="container-fluid" *ngIf="res">
     
     
       <div class="row">
@@ -89,5 +89,90 @@
           </div>               
       </div>
   </div>
-  
+  <div class="container-fluid" *ngIf="!res">
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+              
+          <button mat-raised-button color="warn" style="margin-left: 900px"(click)="clientsPhysiques()" >Clients physiques</button>
+          <button mat-raised-button color="warn" style="margin-left: 20px" (click)="clientsMorales()" >Clients morales</button>
+          
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title ">Vos clients </h4>
+                    <p class="card-category"> </p>
+                </div>
+                <div class="card-body">
+                    <!--<tr>
+                  <th><button mat-stroked-button style="margin-left: 350px" (click)="AjoutclientsPhysique()" >Ajouter client physique</button></th>
+                  <th><button mat-stroked-button  (click)="AjoutclientMorale()" >Ajouter client morale</button></th> 
+                            
+                  <th><button mat-stroked-button (click)="clientsPhysiques()" >clients physiques</button></th>
+                  <th><button mat-stroked-button  (click)="clientsMorales()" >clients morales</button></th> 
+                  
+              </tr>-->
+                 <tr> <p></p> </tr> 
+                  
+                    <div class="table-responsive">
+                      <p></p>
+                      <p></p>
+                        <table class="table" id="mytable">
+                          <p></p>
+                          <p></p>
+                            <thead class=" text-primary">
+                                
+                                <th>
+                                    Identifiant
+                                </th>
+                                <th>
+                                    Numero telephone
+                                </th>
+                                <th>
+                                    Pays 
+                                </th>
+                                <th>
+                                    Risque
+                                </th>
+                                <th>
+                                    Statut
+                                </th>
+                                <th>
+                                    Revue
+                                </th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let contact of contact">
+                                  
+                                  <td>{{contact.codeClient}}</td>
+                                  <td>{{contact.numTelephone}}</td>
+                                  <td>{{contact.paysResidence}}</td>
+                                  <td>{{contact.niveauRisque}}</td>
+                                  <td>{{contact.statutPersonne}}</td>
+                                  <td>{{contact.revue}}</td>
+                                  
+                                  
+
+                                  
+                                  <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deletePP(contact.codeClient)" ><span class="material-icons">delete_outline</span> </button></td>
+                                  
+
+                                </tr>
+                          </tbody>
+                        </table>
+                       
+                      </div>
+                   
+                 
+              
+
+              
+            
+
+                </div>
+            </div>
+        </div>               
+    </div>
+</div>
+
 </div>

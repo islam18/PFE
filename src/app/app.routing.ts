@@ -9,7 +9,7 @@ import { DetailsComponent } from './table-list/details/details.component';
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   }, {
     path: '',

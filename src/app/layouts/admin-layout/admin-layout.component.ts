@@ -6,7 +6,11 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as $ from "jquery";
+import { TokenStorageService } from 'app/securityServices/token-storage.service';
 
+
+
+  
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
@@ -16,10 +20,12 @@ export class AdminLayoutComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
+  isLoggedIn=false;
 
-  constructor( public location: Location, private router: Router) {}
+  constructor( public location: Location, private router: Router,private tokenStorageService: TokenStorageService) {}
 
   ngOnInit() {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
@@ -127,6 +133,7 @@ export class AdminLayoutComponent implements OnInit {
               $sidebar_responsive.css('background-image','url("' + new_image + '")');
           }
       });
+  
   }
   ngAfterViewInit() {
       this.runOnRouteChange();
