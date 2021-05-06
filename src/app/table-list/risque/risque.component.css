@@ -1,5 +1,5 @@
 .l1{
-    margin-top: 30px;
+    margin-top: 10px;
     text-decoration: underline;
     font-size: 18px;
     color:#f94144;
@@ -10,7 +10,9 @@
 
 }
 
-
+#v22{
+    color: #0f0505;
+}
 p,
 label {
     font: 1rem 'Fira Sans', sans-serif;
@@ -25,7 +27,7 @@ input {
     
 }
 #b1 {
-    background-color: red;
+    background-color: rgb(151, 17, 17);
     border: none;
     color: white;
     border-radius: 50%;

@@ -60,6 +60,7 @@ import { DetailsFatcaPPComponent } from './fatca/details-fatca-pp/details-fatca-
 
 
 
+
 @NgModule({
   imports: [
     NgxPaginationModule,

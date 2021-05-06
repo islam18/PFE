@@ -67,6 +67,13 @@ export class PersonnePhysiqueService {
   public getDossiersRisqueFaible()
 {return this.http.get("http://localhost:9090/personnePhysique/DossiersRisqueFaible")}
 
+public getDossiersRisqueMEMF()
+{return this.http.get("http://localhost:9090/personnePhysique/DossiersRisqueMoyennementFaibleouMoyennementEleve")}
+
+public getDossiersRisqueE()
+{return this.http.get("http://localhost:9090/personnePhysique/DossiersRisqueEleve")}
+
+
 AddDocument(justificatif:justificatif,file:File):Observable<any>{
 
   const formData: FormData = new FormData();

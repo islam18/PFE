@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenStorageService } from 'app/securityServices/token-storage.service';
 import { PersonneMoraleServiceService } from 'app/service_clients/personne-morale-service.service';
 
 @Component({
@@ -10,9 +11,28 @@ import { PersonneMoraleServiceService } from 'app/service_clients/personne-moral
 export class IconsComponent implements OnInit {
  personne_morale:any;
  message:any;
-  constructor(private service:PersonneMoraleServiceService,private router: Router) { }
+ private roles: string[];
+ isLoggedIn = false;
+ showAdminBoard = false;
+ showModeratorBoard = false;
+ showConseillerBoard=false;
+ showChefBoard=false;
+ res=false;
+ username: string;
+  constructor(private service:PersonneMoraleServiceService,private router: Router,private tokenStorageService: TokenStorageService) { }
 
   ngOnInit() {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showConseillerBoard = this.roles.includes('ROLE_USER');
+      this.showChefBoard=this.roles.includes('ROLE_CHEF');
+      if( this.showAdminBoard || this.showConseillerBoard || this.showChefBoard ){this.res=true}
+      this.username = user.username;
+      console.log(this.res);}
     this.reloadData();}
   
   reloadData() {

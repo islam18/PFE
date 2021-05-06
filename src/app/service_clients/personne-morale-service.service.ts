@@ -60,6 +60,12 @@ export class PersonneMoraleServiceService {
 {return this.http.get("http://localhost:9090/personneMorale/DossiersRisqueFaible")}
 
 
+public getDossiersRisqueMEMF()
+{return this.http.get("http://localhost:9090/personneMorale/DossiersRisqueMoyennementFaibleouMoyennementEleve")}
+
+public getDossiersRisqueE()
+{return this.http.get("http://localhost:9090/personneMorale/DossiersRisqueEleve")}
+
 
 AddDocument(justificatif:justificatif,file:File):Observable<any>{
 

@@ -27,6 +27,7 @@ export class TableListComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   showConseillerBoard=false;
+  showChefBoard=false;
   res=false;
   username: string;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -43,7 +44,8 @@ export class TableListComponent implements OnInit {
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
       this.showConseillerBoard = this.roles.includes('ROLE_USER');
-      if( this.showAdminBoard || this.showConseillerBoard  ){this.res=true}
+      this.showChefBoard = this.roles.includes('ROLE_CHEF');
+      if( this.showAdminBoard || this.showConseillerBoard || this.showChefBoard ){this.res=true}
       this.username = user.username;
       console.log(this.res);
     }
