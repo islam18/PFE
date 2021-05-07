@@ -56,9 +56,14 @@ export class CompteComponent implements OnInit {
   
   
 
-  traiter(id :number)
+ 
+  traiterClientMoral(id :number)
   {
-     this.router.navigate(['/ouvertureCompte',id])
-   
+     this.router.navigate(['/traiterCompteClientMoral',id])
   }
+  traiterClientPhysique(id :number)
+  {
+     this.router.navigate(['/traiterCompteClientPhysique',id])
+  }
+
 }

@@ -1,3 +1,4 @@
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <div class="main-content">
@@ -60,6 +61,13 @@
                               <ng-template #elseBlock> <p>Aucun risque lié au secteur</p></ng-template>
                          </div>
                              </div>
+                            <tr> 
+                                <td ><p></p><button  mat-raised-button color="primary" style="margin-left: 750px;" (click)="confirmer()" ><span class="material-icons">article</span>Valider</button>
+                                </td>
+                                <td><button  mat-raised-button color="warn" style="margin-left: 20px;" (click)="refuser()"> Refuser</button>
+                                <p></p>
+                                </td>
+                            </tr>
                             </form>
                         </div>
                     </div>

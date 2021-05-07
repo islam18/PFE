@@ -48,4 +48,11 @@ export class OperationService {
     let ekhdem=this.http.get("http://localhost:9090/transaction/GetTest");
     return ekhdem;
   }
+
+  public GetTransactionDouteuses()
+  {
+    return this.http.get("http://localhost:9090/transaction/GetTransactionDouteuses");
+  }
+
+
 }

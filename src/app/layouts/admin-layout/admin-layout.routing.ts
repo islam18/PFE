@@ -34,6 +34,12 @@ import { ProfileComponent } from 'app/security/profile/profile.component';
 import { BoardUserComponent } from 'app/security/board-user/board-user.component';
 import { BoardModeratorComponent } from 'app/security/board-moderator/board-moderator.component';
 import { BoardAdminComponent } from 'app/security/board-admin/board-admin.component';
+import { AuthGuardService } from 'app/AuthGarde/AuthGuard.service';
+import { OperationsDouteusesComponent } from 'app/operations/operations-douteuses/operations-douteuses.component';
+import { TraiterCompteComponent } from 'app/compte/traiter-compte/traiter-compte.component';
+import { TraiterComptePPComponent } from 'app/compte/traiter-compte-pp/traiter-compte-pp.component';
+import { TraiterOperationComponent } from 'app/operations/traiter-operation/traiter-operation.component';
+import { AjouterClientComponent } from 'app/ajouter/ajouter-client/ajouter-client.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -105,12 +111,18 @@ export const AdminLayoutRoutes: Routes = [
     {path:'clientPhysique/:id',component:PersonnePhysiqueComponent},
     {path:'detailsFatca/:id', component:DetailsFatcaComponent},
     { path: 'home', component: HomeComponent },
-    { path: 'login', component: LoginComponent },
+    { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'user', component: BoardUserComponent },
     { path: 'mod', component: BoardModeratorComponent },
     { path: 'admin', component: BoardAdminComponent },
+    { path:'listeTransactionsDouteuses', component:OperationsDouteusesComponent},
+    {path:'traiterTransaction/:id', component:TraiterOperationComponent},
+    {path:'traiterCompteClientMoral/:id', component:TraiterCompteComponent},
+    {path:'traiterCompteClientPhysique/:id', component:TraiterComptePPComponent},
+    {path:'ajouter', component:AjouterClientComponent}
+
     
 
 

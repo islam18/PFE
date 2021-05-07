@@ -57,7 +57,16 @@ import { BoardAdminComponent } from './security/board-admin/board-admin.componen
 import { BoardModeratorComponent } from './security/board-moderator/board-moderator.component';
 import { BoardUserComponent } from './security/board-user/board-user.component';
 import { DetailsFatcaPPComponent } from './fatca/details-fatca-pp/details-fatca-pp.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuardService } from './AuthGarde/AuthGuard.service';
+import { AuthService } from './securityServices/auth.service';
+import { OperationsDouteusesComponent } from './operations/operations-douteuses/operations-douteuses.component';
+import { TraiterOperationComponent } from './operations/traiter-operation/traiter-operation.component';
+import { TraiterCompteComponent } from './compte/traiter-compte/traiter-compte.component';
+import { TraiterComptePPComponent } from './compte/traiter-compte-pp/traiter-compte-pp.component';
 
+import { AjouterClientComponent } from './ajouter/ajouter-client/ajouter-client.component';
+import { ChoixComponent } from './ajouter/choix/choix.component';
 
 
 
@@ -147,9 +156,27 @@ import { DetailsFatcaPPComponent } from './fatca/details-fatca-pp/details-fatca-
    
     DetailsFatcaPPComponent,
    
+    OperationsDouteusesComponent,
+   
+    TraiterOperationComponent,
+   
+    TraiterCompteComponent,
+   
+    TraiterComptePPComponent,
+   
+    
+   
+    AjouterClientComponent,
+   
+    
+   
+    ChoixComponent,
+   
   ],
-  providers: [],
+  providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+    AuthGuardService,AuthService],
   bootstrap: [AppComponent],
-  entryComponents:[RevenuComponent,NationaliteComponent,BeneficiairesEffectifsComponent,PepComponent,PepPMComponent]
+  entryComponents:[RevenuComponent,NationaliteComponent,BeneficiairesEffectifsComponent,PepComponent,PepPMComponent,TraiterOperationComponent,ChoixComponent]
 })
 export class AppModule { }

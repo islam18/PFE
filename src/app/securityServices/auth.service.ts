@@ -12,6 +12,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  isAuthenticated() {
+      throw new Error("Method not implemented.");
+  }
 
   constructor(private http: HttpClient) { }
 
