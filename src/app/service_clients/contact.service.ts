@@ -13,6 +13,9 @@ export class ContactService {
    public getContact()
   {return this.http.get("http://localhost:9090/contact/GetAll")}
 
+  public getContactById(id:number)
+  {return this.http.get("http://localhost:9090/contact/Get/"+id)}
+
   public getRisqueFaiblementEleve()
   {return this.http.get("http://localhost:9090/contact/RisqueFaiblementEleve")}
 

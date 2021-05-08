@@ -38,4 +38,13 @@ export class PersonneMoraleComponent implements OnInit {
   {  
     this.router.navigate(['/risqueClientMorale',id])
   }
+
+  clientsMorales()
+  {
+    this.router.navigate(['/clientsMorales'])
+  }
+    
+  clientsPhysiques(){
+   this.router.navigate(['/clientsPhysiques'])
+ }
 }

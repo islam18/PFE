@@ -40,4 +40,13 @@ export class PersonnePhysiqueComponent implements OnInit {
    this.router.navigate(['/details', id])
  }
 
+ clientsMorales()
+ {
+   this.router.navigate(['/clientsMorales'])
+ }
+   
+ clientsPhysiques(){
+  this.router.navigate(['/clientsPhysiques'])
+}
+
 }

@@ -67,6 +67,11 @@ import { TraiterComptePPComponent } from './compte/traiter-compte-pp/traiter-com
 
 import { AjouterClientComponent } from './ajouter/ajouter-client/ajouter-client.component';
 import { ChoixComponent } from './ajouter/choix/choix.component';
+import { TransactionsDouteusesDetailsComponent } from './operations/transactions-douteuses-details/transactions-douteuses-details.component';
+import { RisqueAnalysePPComponent } from './risque/risque-analyse-pp/risque-analyse-pp.component';
+
+import { NiveauRisqueComponent } from './modeleCotation/niveau-risque/niveau-risque.component';
+import { ModeleComponent } from './modeleCotation/modele/modele.component';
 
 
 
@@ -81,7 +86,7 @@ import { ChoixComponent } from './ajouter/choix/choix.component';
     RouterModule,
     AppRoutingModule,
     MaterialModule,
-    
+  
 	  ToastrModule.forRoot()
     
     
@@ -171,6 +176,26 @@ import { ChoixComponent } from './ajouter/choix/choix.component';
     
    
     ChoixComponent,
+   
+    
+   
+    TransactionsDouteusesDetailsComponent,
+   
+    
+   
+    RisqueAnalysePPComponent,
+   
+    
+   
+
+   
+    
+   
+    NiveauRisqueComponent,
+   
+    
+   
+    ModeleComponent,
    
   ],
   providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

@@ -9,6 +9,22 @@
                     </div>
                     <div class="card-body">
                      <tr> <p></p> </tr> 
+                     <div class="row">
+                      <div class="col-md-4" style="margin-left:600px">
+                       <mat-form-field class="example-full-width">
+                         <input matInput  #rib name="rib" id="rib"  placeholder="Cherchez les transactions d'un client" type="text" >
+                      
+                       </mat-form-field>
+ 
+                       </div>
+                        <div class="col-md-1" >
+                         <button mat-icon-button color="primary"  (click)="chercher(rib.value)">
+                           <span class="material-icons">
+                             search
+                             </span>
+                         </button>
+                        </div>
+                       </div>
                         <div class="table-responsive">
                           <p></p>
                           <p></p>

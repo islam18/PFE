@@ -14,7 +14,7 @@ export const ROUTES: RouteInfo[] = [
     {path:'/fatca', title:'Fatca',icon:'content_paste',class:''},
     {path:'/risqueClientPhysique', title:'Liste Surveillance',icon:'description',class:''},
     { path: '/compte', title: 'Demande compte',  icon:'person_add', class: '' },
- 
+ {path:'/modeleCotationDeRisque', title:'Modele de Cotation',icon:'notification_important',class:''},
     { path: '/operations', title: 'Operations',  icon:'paid', class: '' },
     {path:'/listeTransactions', title:'Transactions',icon:'receipt_long',class:''},
     {path:'/listeTransactionsDouteuses', title:'Transactions douteuses',icon:'notification_important',class:''}

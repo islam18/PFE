@@ -29,6 +29,9 @@ export class PersonnePhysiqueService {
     return this.http.put("http://localhost:9090/personnePhysique/Update/"+id,PP,{responseType:'text' as 'json'})
   }
 
+  public getTrouverCompte(id:number)
+  {return this.http.get("http://localhost:9090/compte/GetID/"+id)}
+  
   public updateP(PP:personne_physique)
   {
     return this.http.put("http://localhost:9090/personnePhysique//miseAjour",PP,{responseType:'text' as 'json'})

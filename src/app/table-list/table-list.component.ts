@@ -21,7 +21,7 @@ export class TableListComponent implements OnInit {
   contact:any;
   code:Number;
   totalRecords:Number=100;
-  page:Number=1;
+
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -30,10 +30,15 @@ export class TableListComponent implements OnInit {
   showChefBoard=false;
   res=false;
   username: string;
+  POSTS: any;
+  page = 1;
+  count = 0;
+  tableSize = 3;
+  tableSizes = [3, 6, 9, 12];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor( private service:ContactService,private router: Router, private dialog:MatDialog,private tokenStorageService: TokenStorageService) { }
 
- 
+  
   
 
   ngOnInit(): void {
@@ -49,24 +54,55 @@ export class TableListComponent implements OnInit {
       this.username = user.username;
       console.log(this.res);
     }
+
     this.reloadData();
   
   
   }
   
     reloadData() {
-    let resp=this.service.getContact();
-    resp.subscribe((data)=>this.contact=data);
-    
-    
-    
-  }
+   /*let resp=this.service.getContact();
+    resp.subscribe(
+      response => {
+        this.POSTS = response;
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      });*/
+      let resp=this.service.getContact();
+      resp.subscribe(
+        response => {
+          this.contact = response;
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        });
+    }
 
   /*public findId(){
     let resp= this.service.getPP(this.personne_physique.Code_clt);
     resp.subscribe((data)=>this.personne_physique=data);
    }
 */
+
+onTableDataChange(event){
+  this.page = event;
+  this.reloadData();
+}  
+
+onTableSizeChange(event): void {
+  this.tableSize = event.target.value;
+  this.page = 1;
+  this.reloadData();
+}
+chercher(id : number )
+{
+ this.router.navigate(['/clientPhysique' , id])
+
+} 
+
    clientsMorales()
    {
      this.router.navigate(['/clientsMorales'])

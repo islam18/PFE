@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { transaction } from '../transaction';
 
 @Injectable({
@@ -20,6 +21,21 @@ export class OperationService {
 
   public getTransactionClient(id:number)
   {return this.http.get("http://localhost:9090/transaction/GetAll/"+id)}
+
+  public getTransactionClientDouteuse(id:number)
+  {return this.http.get("http://localhost:9090/transaction/GetAllDD/"+id)}
+
+  public getTransactionClientDouteuseValidee(id:number)
+  {return this.http.get("http://localhost:9090/transaction/GetAllDV/"+id)}
+
+  public getTrouverCompte(id:number)
+  {return this.http.get("http://localhost:9090/compte/GetID/"+id)}
+
+  public getTransactionClientValidee(id:number)
+  {return this.http.get("http://localhost:9090/transaction/GetAllV/"+id)}
+
+  public getTransactionClientRefuse(id:number)
+  {return this.http.get("http://localhost:9090/transaction/GetAllR/"+id)}
 
   public deleteTransaction(id:number)
   {return this.http.delete("http://localhost:9090/transaction/Delete/"+id,{responseType:'text' as 'json'})
@@ -49,7 +65,7 @@ export class OperationService {
     return ekhdem;
   }
 
-  public GetTransactionDouteuses()
+  public GetTransactionDouteuses():Observable<any>
   {
     return this.http.get("http://localhost:9090/transaction/GetTransactionDouteuses");
   }

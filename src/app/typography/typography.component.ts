@@ -78,8 +78,9 @@ export class TypographyComponent implements OnInit {
      let resp2= this.service.updatePM(this.personne_morale.codeClient,this.personne_morale);
     resp2.subscribe((data)=>this.message=data);   
     
-
+    
     this.router.navigate(['table-list']);
+   
 
     }
 

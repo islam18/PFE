@@ -13,13 +13,13 @@ export class RisqueComponent implements OnInit {
   modelePersonnePhysique:any;
   id:number;
   message:any;
-
+ v:any;
   constructor( private service:ModelePersonnePhysiqueService,private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.modelePersonnePhysique=new modelePersonnePhysique();
     this.id = this.route.snapshot.params['id'];
-
+  
     
 
      this.service.getModele(this.id)
@@ -27,6 +27,23 @@ export class RisqueComponent implements OnInit {
         console.log(data)
         this.modelePersonnePhysique = data;
       }, error => console.log(error));
+  }
+
+  details(code:number)
+  {  this.service.getTrouverCompte(code)
+    .subscribe(data => {
+      
+        console.log(data)
+        this.v = data;
+        this.router.navigate(['/risqueAnalysePP',this.v]);
+      }, error => console.log(error));
+     
+
+
+
+    
+    
+   
   }
 
 }

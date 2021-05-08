@@ -45,9 +45,9 @@ console.log(res);
   {let snackBarRef = this.snackBar.open('operation enregistrée!', 'avec succés', {
     duration: 3000
   });
-  this.dialogRef.close();
+  
 }
-    }));
+this.dialogRef.close();}));
    
   }
 

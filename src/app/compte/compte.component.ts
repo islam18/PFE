@@ -40,9 +40,9 @@ export class CompteComponent implements OnInit {
     resp1.subscribe((data)=>this.personnePhysique=data);
       }
       if(this.showAdminBoard){
-        let resp=this.service.getDossiersRisqueE();
+        let resp=this.service.getPMS();
         resp.subscribe((data)=>this.personneMorale=data);
-        let resp1=this.service1.getDossiersRisqueE();
+        let resp1=this.service1.getPPS();
         resp1.subscribe((data)=>this.personnePhysique=data);
       }
       if(this.showModeratorBoard){

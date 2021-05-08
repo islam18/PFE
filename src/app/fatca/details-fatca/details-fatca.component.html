@@ -5,14 +5,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Client à statut FATCA actif </h4>
-                        <p class="card-category"> Code client : {{personne_morale.codeClient}} </p>
-                    </div>
+                    
                     <div class="card-body">
-                        <label class="l1" ><b> <section class="mat-typography">
-                            <h2>Fiche FATCA</h2>
-                          </section> </b></label>
+                      <label class="l1" ><b> <section class="mat-typography">
+                        <h2>Fiche FATCA</h2>
+                      </section> </b></label> 
 
                           <div *ngIf="personne_morale.paysResidence">  
                             <p class="l2">Lieu de residence de la societé situé aux Etats-Unis  </p>
@@ -45,6 +42,6 @@
             </div>               
         </div>
     </div>
-    
+    <button mat-stroked-button color="warn" (click)="close()" style="margin-left: 600px;" >Fermer</button> 
   </div>
 

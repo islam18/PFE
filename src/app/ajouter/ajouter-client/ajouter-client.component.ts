@@ -16,7 +16,7 @@ export class AjouterClientComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;   
     dialogConfig.width = "50%";
-    dialogConfig.height = "30%";
+    dialogConfig.height = "20%";
     this.dialog.open(ChoixComponent,dialogConfig);
   }
    

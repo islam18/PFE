@@ -17,6 +17,22 @@
                       <p class="card-category"> </p>
                   </div>
                   <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4" style="margin-left: 630px;">
+                         <mat-form-field class="example-full-width">
+                           <input matInput  #code name="code" id="code"  placeholder="Cherchez un client" type="text" >
+                           
+                         </mat-form-field>
+                        
+                         </div>
+                         <div class="col-md-1">
+                            <button mat-icon-button color="primary"  (click)="chercher(code.value)">
+                              <span class="material-icons">
+                                search
+                                </span>
+                            </button>
+                           </div>
+                    </div>
                       <!--<tr>
                     <th><button mat-stroked-button style="margin-left: 350px" (click)="AjoutclientsPhysique()" >Ajouter client physique</button></th>
                     <th><button mat-stroked-button  (click)="AjoutclientMorale()" >Ajouter client morale</button></th> 
@@ -110,7 +126,15 @@
                   <th><button mat-stroked-button  (click)="clientsMorales()" >clients morales</button></th> 
                   
               </tr>-->
-                 <tr> <p></p> </tr> 
+              <div>
+                <div>
+                  <select (change)="onTableSizeChange($event)" >
+                    <option *ngFor="let size of tableSizes" [ngValue]="size">
+                      {{ size }}
+                    </option>
+                  </select>
+                </div>
+              </div>
                   
                     <div class="table-responsive">
                       <p></p>
@@ -140,9 +164,15 @@
                                 </th>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let contact of contact">
+                              <tr *ngFor="let contact of contact | paginate : {
+                                itemsPerPage: tableSize,
+                                currentPage: page,
+                                totalItems: count
+                              };
+                        let i = index" [class.active]="i == currentIndex">
+                        <th scope="row">{{contact.codeClient}}</th>
                                   
-                                  <td>{{contact.codeClient}}</td>
+                        
                                   <td>{{contact.numTelephone}}</td>
                                   <td>{{contact.paysResidence}}</td>
                                   <td>{{contact.niveauRisque}}</td>
@@ -157,17 +187,26 @@
 
                                 </tr>
                           </tbody>
+                          
                         </table>
                        
-                      </div>
                    
-                 
+                        <div >
+                          <pagination-controls 
+                            responsive="true" 
+                            previousLabel="Prev" 
+                            nextLabel="Next" 
+                            (pageChange)="onTableDataChange($event)">
+                          </pagination-controls>
+                        </div>
               
 
               
             
 
                 </div>
+                
+              </div>
             </div>
         </div>               
     </div>

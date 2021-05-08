@@ -27,4 +27,11 @@ export class OperationsDouteusesComponent implements OnInit {
     dialogConfig.width = "50%";
     this.dialog.open(TraiterOperationComponent,dialogConfig);
    } 
+
+   chercher(rib:number)
+  {
+    
+      this.router.navigate(['/detailsDouteuseTransaction', rib])
+    
+  }
 }

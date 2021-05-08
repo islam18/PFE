@@ -17,10 +17,12 @@ export class ChoixComponent implements OnInit {
   ajouterClientMoral()
   {
     this.router.navigate(['/typography'])
+    this.dialogRef.close();
   }
     
   ajouterClientPhysique(){
    this.router.navigate(['/user-profile'])
+   this.dialogRef.close();
  }
 
 }

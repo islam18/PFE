@@ -40,6 +40,11 @@ import { TraiterCompteComponent } from 'app/compte/traiter-compte/traiter-compte
 import { TraiterComptePPComponent } from 'app/compte/traiter-compte-pp/traiter-compte-pp.component';
 import { TraiterOperationComponent } from 'app/operations/traiter-operation/traiter-operation.component';
 import { AjouterClientComponent } from 'app/ajouter/ajouter-client/ajouter-client.component';
+import { DetailsFatcaPPComponent } from 'app/fatca/details-fatca-pp/details-fatca-pp.component';
+import { TransactionsDouteusesDetailsComponent } from 'app/operations/transactions-douteuses-details/transactions-douteuses-details.component';
+import { RisqueAnalysePPComponent } from 'app/risque/risque-analyse-pp/risque-analyse-pp.component';
+import { ModeleComponent } from 'app/modeleCotation/modele/modele.component';
+import { NiveauRisqueComponent } from 'app/modeleCotation/niveau-risque/niveau-risque.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -110,6 +115,8 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'clientMoral/:id', component:PersonneMoraleComponent},
     {path:'clientPhysique/:id',component:PersonnePhysiqueComponent},
     {path:'detailsFatca/:id', component:DetailsFatcaComponent},
+    {path:'detailsFatcaPersonnePhysique/:id', component:DetailsFatcaPPComponent},
+    {path:'detailsDouteuseTransaction/:id', component:TransactionsDouteusesDetailsComponent},
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent },
@@ -121,7 +128,11 @@ export const AdminLayoutRoutes: Routes = [
     {path:'traiterTransaction/:id', component:TraiterOperationComponent},
     {path:'traiterCompteClientMoral/:id', component:TraiterCompteComponent},
     {path:'traiterCompteClientPhysique/:id', component:TraiterComptePPComponent},
-    {path:'ajouter', component:AjouterClientComponent}
+    {path:'ajouter', component:AjouterClientComponent},  
+    {path:'risqueAnalysePP/:id', component:RisqueAnalysePPComponent},
+    {path:'modeleCotationDeRisque', component:ModeleComponent},
+    {path:'niveauRisque',component: NiveauRisqueComponent}
+
 
     
 
