@@ -1,3 +1,4 @@
+import { Pipe } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -16,6 +17,10 @@ import { DetailsComponent } from './details/details.component';
   templateUrl: './table-list.component.html',
   styleUrls: ['./table-list.component.css']
 })
+
+@Pipe({
+  name: 'paginate'
+})
 export class TableListComponent implements OnInit {
 
   contact:any;
@@ -33,7 +38,7 @@ export class TableListComponent implements OnInit {
   POSTS: any;
   page = 1;
   count = 0;
-  tableSize = 3;
+  tableSize =3;
   tableSizes = [3, 6, 9, 12];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor( private service:ContactService,private router: Router, private dialog:MatDialog,private tokenStorageService: TokenStorageService) { }
@@ -55,12 +60,14 @@ export class TableListComponent implements OnInit {
       console.log(this.res);
     }
 
-    this.reloadData();
+   
+      this.fetchPosts();
+    
   
   
   }
   
-    reloadData() {
+  fetchPosts(): void {
    /*let resp=this.service.getContact();
     resp.subscribe(
       response => {
@@ -89,13 +96,13 @@ export class TableListComponent implements OnInit {
 
 onTableDataChange(event){
   this.page = event;
-  this.reloadData();
+  this.fetchPosts();
 }  
 
 onTableSizeChange(event): void {
   this.tableSize = event.target.value;
   this.page = 1;
-  this.reloadData();
+  this.fetchPosts();
 }
 chercher(id : number )
 {
@@ -127,7 +134,7 @@ chercher(id : number )
     let resp= this.service.deleteContact(id);
     resp.subscribe((data)=> {
       console.log(data);
-      this.reloadData();
+      this.fetchPosts();
     },
     error => console.log(error));}
     

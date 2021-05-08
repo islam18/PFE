@@ -198,10 +198,8 @@ import { ModeleComponent } from './modeleCotation/modele/modele.component';
     ModeleComponent,
    
   ],
-  providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService,
-    AuthGuardService,AuthService],
-  bootstrap: [AppComponent],
+  providers: [],
+    bootstrap: [AppComponent],
   entryComponents:[RevenuComponent,NationaliteComponent,BeneficiairesEffectifsComponent,PepComponent,PepPMComponent,TraiterOperationComponent,ChoixComponent]
 })
 export class AppModule { }
