@@ -17,7 +17,8 @@ export const ROUTES: RouteInfo[] = [
  {path:'/modeleCotationDeRisque', title:'Modele de Cotation',icon:'notification_important',class:''},
     { path: '/operations', title: 'Operations',  icon:'paid', class: '' },
     {path:'/listeTransactions', title:'Transactions',icon:'receipt_long',class:''},
-    {path:'/listeTransactionsDouteuses', title:'Transactions douteuses',icon:'notification_important',class:''}
+    {path:'/listeTransactionsDouteuses', title:'Transactions douteuses',icon:'notification_important',class:''},
+    {path:'/visualiserCompte', title:'Visualiser Comptes',icon:'account_balance_wallet',class:''}
 ];
 export const ROUTES1: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },

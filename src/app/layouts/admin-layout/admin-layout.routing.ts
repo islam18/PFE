@@ -45,6 +45,7 @@ import { TransactionsDouteusesDetailsComponent } from 'app/operations/transactio
 import { RisqueAnalysePPComponent } from 'app/risque/risque-analyse-pp/risque-analyse-pp.component';
 import { ModeleComponent } from 'app/modeleCotation/modele/modele.component';
 import { NiveauRisqueComponent } from 'app/modeleCotation/niveau-risque/niveau-risque.component';
+import { VisualiserCompteComponent } from 'app/compte/visualiser-compte/visualiser-compte.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -131,7 +132,8 @@ export const AdminLayoutRoutes: Routes = [
     {path:'ajouter', component:AjouterClientComponent},  
     {path:'risqueAnalysePP/:id', component:RisqueAnalysePPComponent},
     {path:'modeleCotationDeRisque', component:ModeleComponent},
-    {path:'niveauRisque',component: NiveauRisqueComponent}
+    {path:'niveauRisque',component: NiveauRisqueComponent},
+    {path:'visualiserCompte',component:VisualiserCompteComponent}
 
 
     

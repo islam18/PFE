@@ -62,9 +62,6 @@ export class TableListComponent implements OnInit {
 
    
       this.fetchPosts();
-    
-  
-  
   }
   
   fetchPosts(): void {

@@ -72,6 +72,8 @@ import { RisqueAnalysePPComponent } from './risque/risque-analyse-pp/risque-anal
 
 import { NiveauRisqueComponent } from './modeleCotation/niveau-risque/niveau-risque.component';
 import { ModeleComponent } from './modeleCotation/modele/modele.component';
+import { VisualiserCompteComponent } from './compte/visualiser-compte/visualiser-compte.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -86,7 +88,7 @@ import { ModeleComponent } from './modeleCotation/modele/modele.component';
     RouterModule,
     AppRoutingModule,
     MaterialModule,
-  
+    Ng2SearchPipeModule,
 	  ToastrModule.forRoot()
     
     
@@ -196,6 +198,10 @@ import { ModeleComponent } from './modeleCotation/modele/modele.component';
     
    
     ModeleComponent,
+   
+    
+   
+    VisualiserCompteComponent,
    
   ],
   providers: [],
